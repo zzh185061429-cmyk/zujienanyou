@@ -20,6 +20,7 @@ import { regenerateCurrentFloor } from './utils/interaction';
 import { MessageSquare, Calendar, Users, X, MessageCircle } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { cn } from './utils';
+import { calcFittedScale } from '@util/responsive-scale';
 
 type Tab = 'story' | 'dispatch' | 'archive';
 
@@ -38,6 +39,22 @@ function AppContent() {
 
   // 检测脚本模式：通过 __TAVERN_SCRIPT_MODE__ 标记区分全屏策略和 CSS
   const isScriptMode = typeof (window as any).__TAVERN_SCRIPT_MODE__ !== 'undefined';
+
+  // 全屏等比缩放：设计参考尺寸（小于此视口时等比缩小填满屏幕）
+  const DESIGN_W = 900;
+  const DESIGN_H = 500;
+  const [fullscreenScale, setFullscreenScale] = useState(1);
+
+  // 全屏时根据视口变化动态计算缩放比
+  useEffect(() => {
+    if (!isFullscreen) { setFullscreenScale(1); return; }
+    const update = () => setFullscreenScale(calcFittedScale(DESIGN_W, DESIGN_H));
+    update();
+    window.addEventListener('resize', update);
+    return () => window.removeEventListener('resize', update);
+  }, [isFullscreen]);
+
+  const needsScale = isFullscreen && fullscreenScale < 1;
 
   // 监听全屏状态变化（用户按 Esc 退出等）— 仅前端模式需要
   useEffect(() => {
@@ -98,13 +115,14 @@ function AppContent() {
     { id: 'archive', label: '角色图鉴', icon: Users },
   ] as const;
 
-  return (
+  const content = (
     <div 
       className={cn(
-        "flex flex-col bg-pop-black overflow-hidden font-sans relative transition-all duration-300",
+        "flex flex-col bg-pop-black overflow-hidden font-sans relative",
+        !needsScale && "transition-all duration-300",
         isScriptMode
           ? "w-full h-full"
-          : (isFullscreen ? "h-screen" : "w-full aspect-[3/4]")
+          : (isFullscreen ? (needsScale ? "w-full h-full" : "h-screen") : "w-full aspect-[3/4]")
       )}
       style={{ filter: isEyeCareMode ? 'sepia(0.2) brightness(0.9) contrast(0.95)' : 'none' }}
     >
@@ -234,6 +252,26 @@ function AppContent() {
 
       </div>
   );
+
+  // 全屏且视口小于设计尺寸时，用外层容器包裹并居中缩放
+  if (needsScale) {
+    return (
+      <div style={{ position: 'fixed', inset: 0, overflow: 'hidden', background: '#1a1a2e' }}>
+        <div style={{
+          width: `${DESIGN_W}px`,
+          height: `${DESIGN_H}px`,
+          position: 'absolute',
+          left: '50%',
+          top: '50%',
+          transform: `translate(-50%, -50%) scale(${fullscreenScale})`,
+        }}>
+          {content}
+        </div>
+      </div>
+    );
+  }
+
+  return content;
 }
 
 export default function App() {

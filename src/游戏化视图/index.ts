@@ -26,6 +26,34 @@ function hideUserMessages(): void {
 }
 
 // ---------------------------------------------------------------------------
+// 全屏等比缩放
+// ---------------------------------------------------------------------------
+
+/** 设计参考尺寸：视口小于此尺寸时等比缩小 */
+const DESIGN_W = 1024;
+const DESIGN_H = 640;
+
+/** 全屏时的 resize 监听清理函数 */
+let cleanupResize: (() => void) | null = null;
+
+function updateOverlayScale(): void {
+  const $wrapper = $('#game-overlay-wrapper');
+  if (!$wrapper.length) return;
+  // 覆盖层在父文档上，需要用父文档的视口尺寸计算缩放比
+  const pw = window.parent as Window;
+  const scale = Math.min(1, pw.innerWidth / DESIGN_W, pw.innerHeight / DESIGN_H);
+  $wrapper.css({
+    width: `${DESIGN_W}px`,
+    height: `${DESIGN_H}px`,
+    position: 'absolute',
+    left: '50%',
+    top: '50%',
+    transform: `translate(-50%, -50%) scale(${scale})`,
+    transformOrigin: 'center center',
+  });
+}
+
+// ---------------------------------------------------------------------------
 // 全屏: 进入
 // ---------------------------------------------------------------------------
 
@@ -73,10 +101,21 @@ function enterFullscreen(): void {
     .on('click', () => requestExitFullscreen())
     .appendTo($overlay);
 
-  // 将最新前端 iframe 移入覆盖层
+  // 创建 iframe 缩放包装容器
+  const $wrapper = $('<div id="game-overlay-wrapper">').appendTo($overlay);
+
+  // 将最新前端 iframe 移入包装容器
   $latestIframe
     .css({ width: '100%', height: '100%', border: 'none' })
-    .appendTo($overlay);
+    .appendTo($wrapper);
+
+  // 计算并应用等比缩放
+  updateOverlayScale();
+  cleanupResize = () => {
+    window.removeEventListener('resize', updateOverlayScale);
+    cleanupResize = null;
+  };
+  window.addEventListener('resize', updateOverlayScale);
 
   // 全屏覆盖层
   const overlayEl = document.getElementById('game-overlay')!;
@@ -103,13 +142,20 @@ function requestExitFullscreen(): void {
 
 /** 浏览器全屏变化后的清理: 移回 iframe, 销毁覆盖层 */
 function cleanupAfterFullscreenExit(): void {
-  const $iframe = $('#game-overlay iframe');
+  const $wrapper = $('#game-overlay-wrapper');
+  const $iframe = $wrapper.find('iframe');
   const $target = $('.TH-render').last();
   if ($iframe.length && $target.length) {
     $iframe.css({ width: '', height: '', border: '' }).appendTo($target);
   }
   $('#game-overlay').remove();
   isGameFullscreen = false;
+
+  // 清理 resize 监听
+  if (cleanupResize) {
+    cleanupResize();
+  }
+
   console.info('[游戏化视图] 已退出全屏');
 }
 
@@ -123,7 +169,10 @@ function updateOverlayIfFullscreen(): void {
   const $overlay = $('#game-overlay');
   if (!$overlay.length) return;
 
-  const $overlayIframe = $overlay.find('iframe');
+  const $wrapper = $('#game-overlay-wrapper');
+  if (!$wrapper.length) return;
+
+  const $overlayIframe = $wrapper.find('iframe');
   const $latestIframe = $('.TH-render iframe').last();
   if (!$latestIframe.length) return;
 
@@ -134,7 +183,10 @@ function updateOverlayIfFullscreen(): void {
   $overlayIframe.remove();
   $latestIframe
     .css({ width: '100%', height: '100%', border: 'none' })
-    .appendTo($overlay);
+    .appendTo($wrapper);
+
+  // 重新计算缩放（新 iframe 内容可能有不同尺寸需求）
+  updateOverlayScale();
 
   console.info('[游戏化视图] 全屏内容已更新');
 }
