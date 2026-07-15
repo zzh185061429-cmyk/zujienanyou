@@ -23,7 +23,11 @@
     "@types/showdown": "^2.0.6",
     "@types/toastr": "^2.1.43",
     "@types/webpack": "^5.28.5",
+<<<<<<< HEAD
     "@typescript-eslint/parser": "^8.63.0",
+=======
+    "@typescript-eslint/parser": "^8.64.0",
+>>>>>>> 4eaa852d0b2d1f8c70fd2db2aa5d5283d32e00f8
     "autoprefixer": "^10.5.2",
     "chokidar": "^5.0.0",
     "css-loader": "^7.1.4",
@@ -65,7 +69,11 @@
     "tslib": "^2.8.1",
     "type-fest": "^5.8.0",
     "typescript": "6.0.3",
+<<<<<<< HEAD
     "typescript-eslint": "^8.63.0",
+=======
+    "typescript-eslint": "^8.64.0",
+>>>>>>> 4eaa852d0b2d1f8c70fd2db2aa5d5283d32e00f8
     "unplugin-auto-import": "^21.0.0",
     "unplugin-vue-components": "^32.1.0",
     "vue-eslint-parser": "^10.4.1",
@@ -84,7 +92,10 @@
     "@vueuse/shared": "^14.3.0",
     "async-wait-until": "^2.0.31",
     "axios": "1.18.1",
+<<<<<<< HEAD
     "clsx": "^2.1.1",
+=======
+>>>>>>> 4eaa852d0b2d1f8c70fd2db2aa5d5283d32e00f8
     "compare-versions": "^6.1.1",
     "dedent": "^1.7.2",
     "gsap": "^3.15.0",
@@ -94,13 +105,19 @@
     "jsonrepair": "^3.15.0",
     "klona": "^2.0.6",
     "lodash": "^4.18.1",
+<<<<<<< HEAD
     "lucide-react": "^1.24.0",
     "motion": "^12.42.2",
+=======
+>>>>>>> 4eaa852d0b2d1f8c70fd2db2aa5d5283d32e00f8
     "pinia": "^3.0.4",
     "pixi.js": "^8.19.0",
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
+<<<<<<< HEAD
     "tailwind-merge": "^3.6.0",
+=======
+>>>>>>> 4eaa852d0b2d1f8c70fd2db2aa5d5283d32e00f8
     "toastr": "^2.1.4",
     "vue": "^3.5.39",
     "vue-final-modal": "^4.5.5",
