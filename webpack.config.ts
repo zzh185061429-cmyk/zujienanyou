@@ -416,6 +416,7 @@ function parse_configuration(entry: Entry): (_env: any, argv: any) => webpack.Co
           configFile: path.join(import.meta.dirname, 'tsconfig.json'),
         }),
       ],
+<<<<<<< HEAD
       alias: {
         // 强制所有 React 导入使用 production CJS 构建，避免 dev/prod 混用导致
         // motion (framer-motion) 内部 React context 为 null 的 "双重 React 实例" 问题
@@ -427,6 +428,9 @@ function parse_configuration(entry: Entry): (_env: any, argv: any) => webpack.Co
         'react/jsx-runtime$': path.join(path.dirname(require.resolve('react/package.json')), 'cjs', 'react-jsx-runtime.production.js'),
         'react/jsx-dev-runtime$': path.join(path.dirname(require.resolve('react/package.json')), 'cjs', 'react-jsx-runtime.production.js'),
       },
+=======
+      alias: {},
+>>>>>>> b6c722413d8cfdaf014bbb3f87518fd8c19754be
     },
     plugins: (entry.html === undefined
       ? [new MiniCssExtractPlugin()]
@@ -551,6 +555,7 @@ function parse_configuration(entry: Entry): (_env: any, argv: any) => webpack.Co
 
       if (
         ['vue', 'vue-router'].every(key => request !== key) &&
+<<<<<<< HEAD
         ['pixi', 'react', 'vue', 'scheduler'].some(key => request.includes(key))
       ) {
         return callback();
@@ -577,6 +582,12 @@ function parse_configuration(entry: Entry): (_env: any, argv: any) => webpack.Co
       if (request === 'clsx' || request === 'tailwind-merge') {
         return callback();
       }
+=======
+        ['pixi', 'react', 'vue'].some(key => request.includes(key))
+      ) {
+        return callback();
+      }
+>>>>>>> b6c722413d8cfdaf014bbb3f87518fd8c19754be
       const global = {
         jquery: '$',
         lodash: '_',
@@ -593,6 +604,7 @@ function parse_configuration(entry: Entry): (_env: any, argv: any) => webpack.Co
       const cdn = {
         sass: 'https://jspm.dev/sass',
       };
+<<<<<<< HEAD
       // 检查 request 是否为 src/ 或 示例/ 下的目录名（webpack library 导出机制会生成此模块名）
       if (
         fs.existsSync(path.join(import.meta.dirname, 'src', request)) ||
@@ -603,6 +615,19 @@ function parse_configuration(entry: Entry): (_env: any, argv: any) => webpack.Co
       return callback(
         null,
         'module-import ' + (cdn[request as keyof typeof cdn] ?? `https://testingcf.jsdelivr.net/npm/${request}/+esm`),
+=======
+      const package_json = JSON.parse(fs.readFileSync(path.join(import.meta.dirname, 'package.json'), 'utf-8')) as {
+        dependencies?: Record<string, string>;
+        devDependencies?: Record<string, string>;
+      };
+      const package_versions = { ...package_json.devDependencies, ...package_json.dependencies };
+      const version = package_versions[request]?.replace(/^[~^]/, '');
+      const versioned_request = /^[.\d]+$/.test(version) ? `${request}@${version}` : request;
+      return callback(
+        null,
+        'module-import ' +
+          (cdn[request as keyof typeof cdn] ?? `https://testingcf.jsdelivr.net/npm/${versioned_request}/+esm`),
+>>>>>>> b6c722413d8cfdaf014bbb3f87518fd8c19754be
       );
     },
   });

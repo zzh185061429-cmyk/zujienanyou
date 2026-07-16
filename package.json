@@ -84,7 +84,10 @@
     "@vueuse/shared": "^14.3.0",
     "async-wait-until": "^2.0.31",
     "axios": "1.18.1",
+<<<<<<< HEAD
     "clsx": "^2.1.1",
+=======
+>>>>>>> b6c722413d8cfdaf014bbb3f87518fd8c19754be
     "compare-versions": "^6.1.1",
     "dedent": "^1.7.2",
     "gsap": "^3.15.0",
@@ -94,15 +97,23 @@
     "jsonrepair": "^3.15.0",
     "klona": "^2.0.6",
     "lodash": "^4.18.1",
+<<<<<<< HEAD
     "lucide-react": "^1.24.0",
     "motion": "^12.42.2",
+=======
+>>>>>>> b6c722413d8cfdaf014bbb3f87518fd8c19754be
     "pinia": "^3.0.4",
     "pixi.js": "^8.19.0",
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
+<<<<<<< HEAD
     "tailwind-merge": "^3.6.0",
     "toastr": "^2.1.4",
     "vue": "^3.5.40",
+=======
+    "toastr": "^2.1.4",
+    "vue": "^3.5.39",
+>>>>>>> b6c722413d8cfdaf014bbb3f87518fd8c19754be
     "vue-final-modal": "^4.5.5",
     "vue-router": "^5.2.0",
     "vue-word-highlighter": "^1.2.6",
