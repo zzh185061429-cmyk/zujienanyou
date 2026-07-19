@@ -29,9 +29,12 @@ importers:
       axios:
         specifier: 1.18.1
         version: 1.18.1
+<<<<<<< HEAD
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
+=======
+>>>>>>> a4d60f52b8b1b0f872a80088ba7e339b0933eeb2
       compare-versions:
         specifier: ^6.1.1
         version: 6.1.1
@@ -59,12 +62,15 @@ importers:
       lodash:
         specifier: ^4.18.1
         version: 4.18.1
+<<<<<<< HEAD
       lucide-react:
         specifier: ^1.25.0
         version: 1.25.0(react@19.2.7)
       motion:
         specifier: ^12.42.2
         version: 12.42.2(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+=======
+>>>>>>> a4d60f52b8b1b0f872a80088ba7e339b0933eeb2
       pinia:
         specifier: ^3.0.4
         version: 3.0.4(typescript@6.0.3)(vue@3.5.40(typescript@6.0.3))
@@ -77,9 +83,12 @@ importers:
       react-dom:
         specifier: ^19.2.7
         version: 19.2.7(react@19.2.7)
+<<<<<<< HEAD
       tailwind-merge:
         specifier: ^3.6.0
         version: 3.6.0
+=======
+>>>>>>> a4d60f52b8b1b0f872a80088ba7e339b0933eeb2
       toastr:
         specifier: ^2.1.4
         version: 2.1.4
@@ -1474,10 +1483,13 @@ packages:
     resolution: {integrity: sha512-neHB9xuzh/wk0dIHweyAXv2aPGZIVk3pLMe+/RNzINf17fe0OG96QroktYAUm7SM1PBnzTabaLboqqxDyMU+SQ==}
     engines: {node: '>=6'}
 
+<<<<<<< HEAD
   clsx@2.1.1:
     resolution: {integrity: sha512-eYm0QWBtUrBWZWG0d386OGAw16Z995PiOVo2B7bjWSbHedGl5e0ZWaq65kOGgUSNesEIDkB9ISbTg/JK9dhCZA==}
     engines: {node: '>=6'}
 
+=======
+>>>>>>> a4d60f52b8b1b0f872a80088ba7e339b0933eeb2
   coa@2.0.2:
     resolution: {integrity: sha512-q5/jG+YQnSy4nRTV4F7lPepBJZ8qBNJJDBuJdoejDyLXgmL7IEo+Le2JDZudFTFt7mrCqIRaSjws4ygRCTCAXA==}
     engines: {node: '>= 4.0'}
@@ -2055,8 +2067,13 @@ packages:
   fast-levenshtein@2.0.6:
     resolution: {integrity: sha512-DCXu6Ifhqcks7TZKY3Hxp3y6qphY5SJZmrWMDrKcERSOXWQdMhU9Ig/PYrzyw/ul9jOIyh0N4M0tbC5hodg8dw==}
 
+<<<<<<< HEAD
   fast-uri@3.1.4:
     resolution: {integrity: sha512-8JnbkQ4juDyvYs4mgFGQqg4yCYtFDtUtmp2QIQq11ZZe5CFQ5wcqm1rqDgAh/QdMySuBnPzMUiJUNZG5N/AiQw==}
+=======
+  fast-uri@3.1.3:
+    resolution: {integrity: sha512-i70LwGWUduXqzicKXWshooq+sWL1K3WUU5rKZNG/0i3a1OSoX3HqhH5WbWwTmqWfor4urUakGPiRQcleRZTwOg==}
+>>>>>>> a4d60f52b8b1b0f872a80088ba7e339b0933eeb2
 
   fdir@6.5.0:
     resolution: {integrity: sha512-tIbYtZbucOs0BRGqPJkshJUYdL+SDH7dVM8gjy+ERp3WAUjLEFJE+02kanyHtwjWOnwrKYBiwAmM0p4kLJAnXg==}
@@ -2124,6 +2141,7 @@ packages:
   fraction.js@5.3.4:
     resolution: {integrity: sha512-1X1NTtiJphryn/uLQz3whtY6jK3fTqoE3ohKs0tT+Ujr1W59oopxmoEh7Lu5p6vBaPbgoM0bzveAW4Qi5RyWDQ==}
 
+<<<<<<< HEAD
   framer-motion@12.42.2:
     resolution: {integrity: sha512-5XY9luDiu0oHfHBjpDthFMh0ES+122w6p/papSJBweMkO8Sn+PW2QaEgRblQBpWFnuvZS5qvarpt/hO2pjGmnw==}
     peerDependencies:
@@ -2138,6 +2156,8 @@ packages:
       react-dom:
         optional: true
 
+=======
+>>>>>>> a4d60f52b8b1b0f872a80088ba7e339b0933eeb2
   front-matter@4.0.2:
     resolution: {integrity: sha512-I8ZuJ/qG92NWX8i5x1Y8qyj3vizhXS31OxjKDu3LKP+7/qBgfIKValiZIEwoVoJKUHlhWtYrktkxV1XsX+pPlg==}
 
@@ -2818,11 +2838,14 @@ packages:
   lower-case@2.0.2:
     resolution: {integrity: sha512-7fm3l3NAF9WfN6W3JOmf5drwpVqX78JtoGJ3A6W0a6ZnldM41w2fV5D490psKFTpMds8TJse/eHLFFsNHHjHgg==}
 
+<<<<<<< HEAD
   lucide-react@1.25.0:
     resolution: {integrity: sha512-/mdJTRbiwcLOQ1NZZK1amZF9rIZyvO18D6r9TngE6TG1NmqHgFuT4eE7Xrkm9UsXMbBJD1NlfwHVltCDWHrOTw==}
     peerDependencies:
       react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0
 
+=======
+>>>>>>> a4d60f52b8b1b0f872a80088ba7e339b0933eeb2
   magic-string-ast@1.0.3:
     resolution: {integrity: sha512-CvkkH1i81zl7mmb94DsRiFeG9V2fR2JeuK8yDgS8oiZSFa++wWLEgZ5ufEOyLHbvSbD1gTRKv9NdX69Rnvr9JA==}
     engines: {node: '>=20.19.0'}
@@ -3022,6 +3045,7 @@ packages:
   mlly@1.8.2:
     resolution: {integrity: sha512-d+ObxMQFmbt10sretNDytwt85VrbkhhUA/JBGm1MPaWJ65Cl4wOgLaB1NYvJSZ0Ef03MMEU/0xpPMXUIQ29UfA==}
 
+<<<<<<< HEAD
   motion-dom@12.42.2:
     resolution: {integrity: sha512-5gIMWLp/PycBtJRJWRgjxke5n8dlvkSn2DrYW+tr3XcqAZY1xZh6BJyooJXCM8wdfM7wfMjkBJNLge1CKPUIRA==}
 
@@ -3042,6 +3066,8 @@ packages:
       react-dom:
         optional: true
 
+=======
+>>>>>>> a4d60f52b8b1b0f872a80088ba7e339b0933eeb2
   ms@2.0.0:
     resolution: {integrity: sha512-Tpp60P6IUJDTuOq/5Z8cdskzJujfwqfOTkrwIwj7IRISpnkJnT6SyJ4PCPnGMoFjC9ddhal5KVIYtAt97ix05A==}
 
@@ -3807,9 +3833,12 @@ packages:
       '@eslint/css':
         optional: true
 
+<<<<<<< HEAD
   tailwind-merge@3.6.0:
     resolution: {integrity: sha512-uxL7qAVQriqRQPAyK3pj66VqskWqoZ37PW94jwOTwNfq/z9oyu1V+eqrZqtR2+fCiXdYOZe/Modt8GtvqNzu+w==}
 
+=======
+>>>>>>> a4d60f52b8b1b0f872a80088ba7e339b0933eeb2
   tailwindcss@4.3.3:
     resolution: {integrity: sha512-gOhV3P7ufE62QDGg1zVaTgCR+EtPv92k2nIhVcVKcLmxT1sUBsQGhnZj175j+MqRt4zLF7ic+sCYjfhxMxj7YQ==}
 
@@ -5305,7 +5334,11 @@ snapshots:
   ajv@8.20.0:
     dependencies:
       fast-deep-equal: 3.1.3
+<<<<<<< HEAD
       fast-uri: 3.1.4
+=======
+      fast-uri: 3.1.3
+>>>>>>> a4d60f52b8b1b0f872a80088ba7e339b0933eeb2
       json-schema-traverse: 1.0.0
       require-from-string: 2.0.2
 
@@ -5600,8 +5633,11 @@ snapshots:
       kind-of: 6.0.3
       shallow-clone: 3.0.1
 
+<<<<<<< HEAD
   clsx@2.1.1: {}
 
+=======
+>>>>>>> a4d60f52b8b1b0f872a80088ba7e339b0933eeb2
   coa@2.0.2:
     dependencies:
       '@types/q': 1.5.8
@@ -6259,7 +6295,11 @@ snapshots:
 
   fast-levenshtein@2.0.6: {}
 
+<<<<<<< HEAD
   fast-uri@3.1.4: {}
+=======
+  fast-uri@3.1.3: {}
+>>>>>>> a4d60f52b8b1b0f872a80088ba7e339b0933eeb2
 
   fdir@6.5.0(picomatch@4.0.5):
     optionalDependencies:
@@ -6320,6 +6360,7 @@ snapshots:
 
   fraction.js@5.3.4: {}
 
+<<<<<<< HEAD
   framer-motion@12.42.2(react-dom@19.2.7(react@19.2.7))(react@19.2.7):
     dependencies:
       motion-dom: 12.42.2
@@ -6329,6 +6370,8 @@ snapshots:
       react: 19.2.7
       react-dom: 19.2.7(react@19.2.7)
 
+=======
+>>>>>>> a4d60f52b8b1b0f872a80088ba7e339b0933eeb2
   front-matter@4.0.2:
     dependencies:
       js-yaml: 3.15.0
@@ -7022,10 +7065,13 @@ snapshots:
     dependencies:
       tslib: 2.8.1
 
+<<<<<<< HEAD
   lucide-react@1.25.0(react@19.2.7):
     dependencies:
       react: 19.2.7
 
+=======
+>>>>>>> a4d60f52b8b1b0f872a80088ba7e339b0933eeb2
   magic-string-ast@1.0.3:
     dependencies:
       magic-string: 0.30.21
@@ -7293,6 +7339,7 @@ snapshots:
       pkg-types: 1.3.1
       ufo: 1.6.4
 
+<<<<<<< HEAD
   motion-dom@12.42.2:
     dependencies:
       motion-utils: 12.39.0
@@ -7307,6 +7354,8 @@ snapshots:
       react: 19.2.7
       react-dom: 19.2.7(react@19.2.7)
 
+=======
+>>>>>>> a4d60f52b8b1b0f872a80088ba7e339b0933eeb2
   ms@2.0.0: {}
 
   ms@2.1.3: {}
@@ -8106,8 +8155,11 @@ snapshots:
 
   tailwind-csstree@0.3.3: {}
 
+<<<<<<< HEAD
   tailwind-merge@3.6.0: {}
 
+=======
+>>>>>>> a4d60f52b8b1b0f872a80088ba7e339b0933eeb2
   tailwindcss@4.3.3: {}
 
   tapable@2.3.3: {}
